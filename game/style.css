@@ -1,0 +1,47 @@
+/* Gobble Run — page chrome around the canvas. One job: centre the game
+   on an autumn backdrop and keep the help line readable. */
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #2e180a;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+#stage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#game {
+  width: min(96vw, calc(96vh * 16 / 9));
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: 4px solid #ffb347;
+  border-radius: 12px;
+  background: #f7b733;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  touch-action: none;
+  cursor: pointer;
+}
+
+/* Read aloud, never shown: the status line screen readers announce. */
+#status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+#help {
+  margin: 0;
+  color: #ffe9b0;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
